@@ -1,4 +1,6 @@
 import math
+import shutil
+
 
 import unidata_blocks
 from PIL import ImageFont, Image, ImageDraw
@@ -60,4 +62,4 @@ def apply_fallback(fallback_config: FallbackConfig):
                 glyph_file_name = f'{code_name} {fallback_config.flavor}.png'
             glyph_file_path_to = glyph_file_dir_to.joinpath(glyph_file_name)
             glyph_file_dir_to.mkdir(parents=True, exist_ok=True)
-            glyph_file_path_from.copy(glyph_file_path_to)
+            shutil.copy(glyph_file_path_from, glyph_file_path_to)

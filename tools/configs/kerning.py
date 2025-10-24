@@ -6,7 +6,7 @@ from tools.configs.options import FontSize
 
 class KerningConfig:
     @staticmethod
-    def load(font_size: FontSize) -> KerningConfig:
+    def load(font_size: FontSize) -> "KerningConfig":
         config_file_path = path_define.ark_pixel_configs_dir.joinpath(f'kerning-{font_size}px.yml')
         if not config_file_path.exists():
             return KerningConfig({}, {})

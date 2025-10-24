@@ -17,7 +17,7 @@ from tools.services import dump_service, kerning_service
 
 class DesignContext:
     @staticmethod
-    def load(font_size: FontSize, mappings: list[dict[int, SourceFlavorGroup]]) -> DesignContext:
+    def load(font_size: FontSize, mappings: list[dict[int, SourceFlavorGroup]]) -> "DesignContext":
         contexts = {}
         for width_mode_dir_name in itertools.chain(['common'], options.width_modes):
             context = glyph_file_util.load_context(path_define.fallback_glyphs_dir.joinpath(str(font_size), width_mode_dir_name))
